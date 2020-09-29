@@ -1,28 +1,25 @@
 package com.example.loginappmvvm.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.loginappmvvm.R
-import com.example.loginappmvvm.databinding.FragmentLoginBinding
+import com.example.loginappmvvm.databinding.FragmentSignUpBinding
 
 
-class LoginFragment : Fragment() {
-
-    private lateinit var binding: FragmentLoginBinding
+class SignUpFragment : Fragment() {
+    private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
-
-        binding.gotoSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment, null)
+        // Inflate the layout for this fragment
+        binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        binding.backToLogin.setOnClickListener{
+            findNavController().navigateUp()
         }
         return binding.root
     }

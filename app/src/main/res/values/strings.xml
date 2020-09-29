@@ -2,6 +2,10 @@
     <string name="app_name">LoginAppMvvm</string>
     <string name="email">email</string>
     <string name="password">Password</string>
+    <string name="password_confirm">confirm password</string>
     <string name="login">login</string>
     <string name="logo">Logo</string>
+    <string name="create_account">create account</string>
+    <string name="sign_up">sign up</string>
+    <string name="already_have_an_account">Already have an account ?</string>
 </resources>

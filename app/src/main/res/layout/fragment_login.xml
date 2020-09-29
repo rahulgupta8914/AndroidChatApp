@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<ScrollView
-    android:id="@+id/scrollview"
-    android:layout_width="match_parent"
-    android:fillViewport="true"
-    android:layout_height="match_parent"
-    android:isScrollContainer="true">
+<!--<ScrollView-->
+<!--    android:id="@+id/scrollview"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:fillViewport="true"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:isScrollContainer="true">-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginLayout"
@@ -16,8 +16,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="5dp"
-        tools:context=".ui.fragments.LoginFragment">
+        android:layout_marginBottom="5dp">
 
         <TextView
             android:id="@+id/logo"
@@ -75,9 +74,21 @@
             android:padding="16dp"
             android:textAllCaps="false"
             app:buttonTextLabel="@{@string/login}"
+            app:layout_constraintBottom_toTopOf="@+id/gotoSignUp"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/gotoSignUp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTextLabel="@{@string/create_account}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+<!--</ScrollView>-->
 </layout>
