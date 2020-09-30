@@ -29,25 +29,23 @@ class ConversationsFragment : Fragment() {
 
 
     private fun subscribeUi(adapter: ConversationsAdapter) {
-//        viewModel.plants.observe(viewLifecycleOwner) { plants ->
-//            adapter.submitList(plants)
-//        }
-
 //        dummy conversation
         val con = listOf<Conversation>(
             Conversation("id1", "Alap de",null, "hello","08/07/2019"),
             Conversation("id2", "Anupam Manna", null,"I will be hacker","01/07/2019"),
             Conversation("id3", "Rahat Alam", null,"I am working on my new film, tomorrow ","03/05/2019"),
             Conversation("id4", "Avijit de", null,"I am looking for job, Please refer me if you know one","08/07/2019"),
-//            Conversation("id5", "Twinkle", null,"I enjoy asutosh college","08/08/2019"),
-//            Conversation("id6", "Alap de", null,"hello","08/07/2019"),
-//            Conversation("id7", "Anupam Manna", null,"I will be hacker","01/07/2019"),
-//            Conversation("id8", "Rahat Alam", null,"I am working on my new film, tomorrow ","03/05/2019"),
-//            Conversation("id9", "Avijit de", null,"I am looking for job, Please refer me if you know one","08/07/2019"),
-//            Conversation("id10", "Twinkle", null,"I enjoy asutosh college","08/08/2019")
+            Conversation("id5", "Twinkle", null,"I enjoy asutosh college","08/08/2019"),
+            Conversation("id6", "Alap de", null,"hello","08/07/2019"),
+            Conversation("id7", "Anupam Manna", null,"I will be hacker","01/07/2019"),
+            Conversation("id8", "Rahat Alam", null,"I am working on my new film, tomorrow ","03/05/2019"),
+            Conversation("id9", "Avijit de", null,"I am looking for job, Please refer me if you know one","08/07/2019"),
+            Conversation("id10", "Twinkle", null,"I enjoy asutosh college","08/08/2019")
         )
-
         adapter.submitList(con)
+//        viewModel.plants.observe(viewLifecycleOwner) { plants ->
+//            adapter.submitList(plants)
+//        }
 
     }
 }
