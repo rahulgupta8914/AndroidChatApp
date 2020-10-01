@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginappmvvm.data.model.Conversation
-import com.example.loginappmvvm.databinding.ConversationEachBinding
+import com.example.loginappmvvm.databinding.EachConversationBinding
 import com.example.loginappmvvm.ui.fragments.ConversationsFragmentDirections
 
 class ConversationsAdapter:
     ListAdapter<Conversation,  RecyclerView.ViewHolder>(ConversationDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ConversationViewHolder(ConversationEachBinding.inflate(
+        return ConversationViewHolder(EachConversationBinding.inflate(
             LayoutInflater.from(parent.context),parent,false))
     }
 
@@ -24,7 +24,7 @@ class ConversationsAdapter:
         (holder as ConversationViewHolder).bind(conversation)
     }
 
-    class ConversationViewHolder(private val binding :ConversationEachBinding
+    class ConversationViewHolder(private val binding :EachConversationBinding
         ):RecyclerView.ViewHolder(binding.root){
         init {
             binding.setClickListener { view ->

@@ -39,7 +39,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints">
+                tools:ignore="MissingConstraints"
+                android:layout_marginStart="12dp">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -48,11 +49,12 @@
                     app:imageUrl='@{conversation.fromImageUrl !=null ? conversation.fromImageUrl : ""}'
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="36dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:contentDescription="@{conversation.from}" />
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/author"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -69,7 +71,9 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toTopOf="@+id/cardView"
-                tools:text="username_dummy" />
+                tools:text="username_dummy"
+                android:paddingEnd="8dp"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -83,8 +87,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/count"
                 app:layout_constraintHorizontal_bias="0.172"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/author"
+                app:layout_constraintTop_toBottomOf="@+id/author"
                 tools:text="I am a message from future" />
 
             <TextView
@@ -95,7 +99,7 @@
                 android:layout_marginRight="12dp"
                 android:text="@{conversation.date}"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/author"
                 tools:text="12/12/12" />
 
             <androidx.cardview.widget.CardView

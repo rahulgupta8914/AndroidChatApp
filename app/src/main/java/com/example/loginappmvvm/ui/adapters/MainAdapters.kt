@@ -1,9 +1,12 @@
 package com.example.loginappmvvm.ui.adapters
 
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.databinding.BindingAdapter
 import com.example.loginappmvvm.R
 import com.google.android.material.textfield.TextInputLayout
@@ -48,3 +51,13 @@ fun bindIsGone(view: View, isGone: Boolean) {
         View.VISIBLE
     }
 }
+
+@BindingAdapter("conditional_h_bias")
+fun bindConditionalHBias(view: View, condition: Boolean){
+    val constraintLayout = (view.parent as? ConstraintLayout) ?: return
+    val constraintSet = ConstraintSet()
+    constraintSet.clone(constraintLayout)
+    constraintSet.setHorizontalBias(view.id, if (condition)  1.0f else 0.0f )
+    constraintSet.applyTo(constraintLayout)
+}
+
