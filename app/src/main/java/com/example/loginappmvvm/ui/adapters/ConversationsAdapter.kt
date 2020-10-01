@@ -1,12 +1,15 @@
 package com.example.loginappmvvm.ui.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginappmvvm.data.model.Conversation
 import com.example.loginappmvvm.databinding.ConversationEachBinding
+import com.example.loginappmvvm.ui.fragments.ConversationsFragmentDirections
 
 class ConversationsAdapter:
     ListAdapter<Conversation,  RecyclerView.ViewHolder>(ConversationDiffCallback()) {
@@ -23,6 +26,19 @@ class ConversationsAdapter:
 
     class ConversationViewHolder(private val binding :ConversationEachBinding
         ):RecyclerView.ViewHolder(binding.root){
+        init {
+            binding.setClickListener { view ->
+                binding.conversation?.id?.let{ id ->
+                    navigateToMessages(id, view)
+                }
+            }
+        }
+
+        private fun navigateToMessages(id: String, view: View){
+            val direction = ConversationsFragmentDirections
+                .actionConversationsFragmentToMessagesListFragment(id)
+            view.findNavController().navigate(direction)
+        }
 
         fun bind(item: Conversation) {
             binding.apply {
