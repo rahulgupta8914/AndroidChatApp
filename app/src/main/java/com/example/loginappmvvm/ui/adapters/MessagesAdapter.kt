@@ -10,7 +10,7 @@ import com.example.loginappmvvm.data.model.Message
 import com.example.loginappmvvm.databinding.EachMessageBinding
 
 class MessagesAdapter: ListAdapter<Message, RecyclerView.ViewHolder>(MessageDiffCallback()) {
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MessageViewHolder(
             EachMessageBinding.inflate(

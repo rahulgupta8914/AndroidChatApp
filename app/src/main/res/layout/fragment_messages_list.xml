@@ -35,7 +35,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView"
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:clickable="true"
@@ -110,14 +110,66 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/messagesList"
+        <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/each_message"
+        android:paddingBottom="8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" >
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messagesList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/liearlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:windowSoftInputMode="adjustResize"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/each_message">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/liearlayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:windowSoftInputMode="adjustPan"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <EditText
+                    android:layout_weight="1"
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="28dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/gray_50"
+                    android:inputType="textMultiLine"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_baseline_send_24"
+                    android:layout_weight="0" />
+
+            </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
 
