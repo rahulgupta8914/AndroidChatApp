@@ -117,28 +117,27 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true" >
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/messagesList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/liearlayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:windowSoftInputMode="adjustResize"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/each_message">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/messagesList"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/liearlayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:windowSoftInputMode="adjustResize"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/each_message">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
                 android:id="@+id/liearlayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:windowSoftInputMode="adjustPan"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
+                android:paddingTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -146,18 +145,18 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <EditText
-                    android:layout_weight="1"
                     android:id="@+id/textView"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="28dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
                     android:background="@color/gray_50"
                     android:inputType="textMultiLine"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp" />
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp" />
 
                 <Button
                     android:id="@+id/button2"

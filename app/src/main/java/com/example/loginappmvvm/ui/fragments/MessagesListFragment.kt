@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.loginappmvvm.data.model.Message
@@ -23,6 +24,8 @@ class MessagesListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMessagesListBinding.inflate(inflater, container, false)
 
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+
         binding.backBtn.setOnClickListener {
             findNavController().navigateUp()
         }
@@ -34,6 +37,10 @@ class MessagesListFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+        super.onDestroyView()
+    }
     private fun subscribeUi(adapter: MessagesAdapter){
         val dummyMessage = listOf<Message>(
             Message("1",

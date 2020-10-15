@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginAppMvvm</string>
+    <string name="app_name">Chat App</string>
     <string name="email">email</string>
     <string name="password">Password</string>
     <string name="password_confirm">confirm password</string>
